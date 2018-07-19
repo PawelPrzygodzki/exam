@@ -1,0 +1,7 @@
+export const CenterLayout = ({children}) => (
+    <div>
+        <div>
+            {children}
+        </div>
+    </div>
+);
