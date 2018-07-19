@@ -15,7 +15,13 @@ module.exports = {
                 test: /\.s?css$/,
                 use: [
                     'style-loader',
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            localIdentName: '[name]_[local]__[hash:base64:5]'
+                        }
+                    },
                     'sass-loader',
                 ]
             }
@@ -26,7 +32,7 @@ module.exports = {
         extensions: ['*', '.js', '.jsx']
     },
     output: {
-        path: path.join(__dirname, 'public', 'dist'),
+        path: path.join(__dirname, 'public'),
         publicPath: '/',
         filename: 'bundle.js'
     },

@@ -1,0 +1,10 @@
+@import "settings";
+* {
+ box-sizing: border-box;
+}
+
+body {
+  color: $dark-grey;
+  font-family: Halvetica, Arial, sans-serif;
+  font-size: $m-space;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Input.scss';
+import styles from './Input.scss';
 
 export const Input = ({
     label,
@@ -9,8 +9,9 @@ export const Input = ({
     onChange
 }) => (
     <div>
-        <label htmlFor={name} className={'label'}>{label}</label>
+        <label htmlFor={name} className={styles.label}>{label}</label>
         <input
+            className={styles.input}
             onChange={(event) => {
                 let value = event.target.value;
                 if (type === 'checkbox') {

@@ -1,5 +1,22 @@
+@import "../../theme/settings";
+
 .label {
-    width: 100%;
-    text-align: center;
-    color: #F00
+  display: inline-block;
+  margin-bottom: $s-space/3;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  margin: $s-space 0;
+  display: block;
+  padding: $s-space/3 $s-space/2;
+  font-size: $m-space;
+  line-height: 1.5;
+  color: $dark-grey;
+  background-color: #fff;
+  border: 1px solid $grey;
+  border-radius: 0.25rem;
 }

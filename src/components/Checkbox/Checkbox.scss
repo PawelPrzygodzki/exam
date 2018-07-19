@@ -1,0 +1,17 @@
+@import "../../theme/settings";
+
+.container {
+  line-height: 1;
+  vertical-align: middle;
+  display: flex;
+  margin: $m-space 0;
+}
+
+.label {
+  margin-left: $s-space;
+  font-weight: bold;
+}
+
+.input {
+  margin: auto 0;
+}

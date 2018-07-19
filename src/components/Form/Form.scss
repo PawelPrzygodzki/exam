@@ -1,0 +1,28 @@
+@import "../../theme/settings";
+
+.container {
+  width: 20%;
+  height: 20%;
+  padding: $m-space $s-space;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: $l-space;
+}
+
+.error {
+  color: $red;
+  padding: $s-space;
+  margin-bottom: $s-space;
+  min-height: $l-space;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid lighten($grey, 50%);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.buttonWrapper {
+  text-align: center;
+}

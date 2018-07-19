@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Input} from '../Input';
+import {Checkbox} from '../Checkbox';
+import {Button} from '../Button';
+import styles from './Form.scss';
 
 export class Form extends React.Component {
     state = {
@@ -62,8 +65,9 @@ export class Form extends React.Component {
         } = this.state;
 
         return (
-            <form onSubmit={this.onSubmit}>
-                {error && <div>{error}</div>}
+            <form className={styles.container} onSubmit={this.onSubmit}>
+                <h1 className={styles.header}>Sign in</h1>
+                {error && <div className={styles.error}>{error}</div>}
                 <Input
                     label='Email'
                     name='email'
@@ -76,13 +80,12 @@ export class Form extends React.Component {
                     type='password'
                     onChange={(value) => this.setState({password: value})}
                 />
-                <Input
+                <Checkbox
                     label='Remember me'
                     name='remember'
-                    type='checkbox'
                     onChange={(value) => this.setState({remember: value})}
                 />
-                <input type="submit" value="login"/>
+                <div className={styles.buttonWrapper}> <Button value='Login'/></div>
             </form>
         );
     }

@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import styles from './SuccessPage.scss';
 
 export const SuccessPage = () => (
-    <div>
+    <div className={styles.container}>
         Login successful
     </div>
 );
