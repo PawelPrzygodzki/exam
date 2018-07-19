@@ -1,6 +1,7 @@
 import React from 'react';
 import {SuccessPage} from '../../components/SuccessPage';
 import {Form} from '../../components/Form';
+import PropTypes from 'prop-types';
 import LoginService from "../../service/LoginService/LoginService";
 
 export default class Application extends React.Component {
@@ -9,10 +10,8 @@ export default class Application extends React.Component {
         loginError: '',
     };
 
-    loginService = new LoginService();
-
     onLogin = (model) => {
-        this.loginService
+        return this.props.loginService
             .login(model)
             .then(() => this.setState({isLogged: true, loginError: ''}))
             .catch(() => this.setState({isLogged: false, loginError: 'Invalid email or password'}))
@@ -33,3 +32,7 @@ export default class Application extends React.Component {
         )
     }
 }
+
+Application.propTypes = {
+    loginService: PropTypes.instanceOf(LoginService)
+};

@@ -17,7 +17,11 @@ export class Form extends React.Component {
         event.preventDefault();
 
         if (this.validate()) {
-            this.props.onLogin(this.state)
+            this.props.onLogin({
+                password: this.state.password,
+                email: this.state.email,
+                remember: this.state.remember,
+            })
         }
     };
 
@@ -67,7 +71,7 @@ export class Form extends React.Component {
         return (
             <form className={styles.container} onSubmit={this.onSubmit}>
                 <h1 className={styles.header}>Sign in</h1>
-                {error && <div className={styles.error}>{error}</div>}
+                {error && <div data-ctx="error" className={styles.error}>{error}</div>}
                 <Input
                     label='Email'
                     name='email'

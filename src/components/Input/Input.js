@@ -12,13 +12,7 @@ export const Input = ({
         <label htmlFor={name} className={styles.label}>{label}</label>
         <input
             className={styles.input}
-            onChange={(event) => {
-                let value = event.target.value;
-                if (type === 'checkbox') {
-                    value = event.target.checked;
-                }
-                onChange(value)
-            }}
+            onChange={(event) => onChange(event.target.value)}
             type={type}
             name={name}
             id={name}
@@ -32,7 +26,7 @@ Input.defaultProps = {
 
 Input.propTypes = {
     label: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['password', 'text', 'checkbox']).isRequired,
+    type: PropTypes.oneOf(['password', 'text']).isRequired,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
 };
